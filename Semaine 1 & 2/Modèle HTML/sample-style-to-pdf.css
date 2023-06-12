@@ -1,0 +1,63 @@
+* {
+   box-sizing: border-box;
+   margin: 0;
+   padding: 0;
+}
+body {
+   background-color: bisque;
+   margin: 0;
+   padding: 0;
+}
+
+section>h1{
+   position: relative;
+   left: 700px;
+   margin: 5px 0px;
+}
+
+section>p{
+   padding: 20px 20px;
+}
+
+section>a{
+   padding: 20px 20px;
+}
+
+section>figure{
+   padding: 20px 20px;
+}
+
+.bottom {
+   position: absolute;
+   bottom: 0;
+   border: 1px dotted red;
+   text-align: justify;
+   min-height: 5rem;
+}
+
+#page1{
+   position: relative;
+   height: 100vh;
+   margin: 10px 10px;
+}
+
+#page2{
+
+}
+
+#page3{
+   padding: 20px 20px;
+}
+
+/* @page { size: A4 } */
+
+@media print {
+   section {
+      border: 1px solid black;
+      width: 8.26in;
+      height: 11.66in;
+      margin: 0;
+      /* change the margins as you want them to be. */
+      page-break-after: always;
+   }
+}

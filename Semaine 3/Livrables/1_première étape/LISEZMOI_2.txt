@@ -1,0 +1,19 @@
+Documentation pour récupérer les images modifiées:
+
+Première étape:
+- récupérer le script "convertion_images.sh"
+
+Deuxième étape:
+- créer un répertoire "photos" qui contiendra les photos au format SVG fournit par le client et un dossier "photos_finales" qui contiendra les photos finales qui seront générées par le script.
+
+À SAVOIR:
+vous pouvez modifier le nom du dossier d'entrée des images, le dossier de sortie, les formats des images à entrée à et sortir ainsi que le nom de l'image docker "imagick". Pour cela, consultez la partie marquée "#config" du fichier convertion_images.sh.
+
+Troisième étape:
+Lancer le script avec la commande suivante:
+bash convertion_images.sh
+
+À SAVOIR:
+Si vous n'avez pas la permission de lancer le script, faites
+chmod u+x convertion_images.sh
+cette commande va autoriser les droits d'execution du fichier pour l'utilisateur (vous).

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <link rel="stylesheet" href="sample-style-to-pdf.css">
+</head>
+<body> 
+   <div id="Page1">
+   
+      <section>
+         <h1>Régions</h1>
+      </br>
+         <p>%NOM_REGION%</p>
+         <p>%POPULATION%</p>
+         <p>%SUPERFICIE%</p>
+         <p>%NB_DEPARTEMENTS%</p>
+         <p>%LOGO_REGIONS%</p>
+
+         <table>
+            <td></td>
+            <td></td>
+            <td></td>
+         </table>
+
+      <a href="#" onclick="return show('Page2','Page1');">Page 2</a>
+      </section>
+   </div>
+      
+      
+   <div id="Page2" style="display:none">
+      <section>
+         <h1>Avatars</h1>
+         <figure>
+            <img src="" alt="photo">
+            <figcaption>
+
+            </figcaption>
+         </figure>
+         <figure>
+            <img src="" alt="photo">
+            <figcaption>
+
+            </figcaption>
+         </figure>
+         <figure>
+            <img src="" alt="photo">
+            <figcaption>
+
+            </figcaption>
+         </figure>
+         
+         <a href="#" onclick="return show('Page3','Page2');">Page 3</a>
+      </section>
+   
+ 
+   </div>
+
+   <div id="Page3" style="display:none">
+      <section>
+      </br>
+         <a href="https://www.orange.fr/portail" >Lien vers la page web fictive</a>
+      </br>
+         <figure>
+            <img src="" alt="Qr code de l'image">
+            <figcaption>
+
+            </figcaption>
+         </figure>
+      </br>
+         
+         <a href="#" onclick="return show('Page1','Page3');">Retour à la page 1</a>
+      </section>
+   
+ 
+   </div>
+
+      <section>
+         <div class="bottom">JJ-MM-AAAA HH:MM</div>
+      </section>
+   
+</body>
+   <script>
+      function show(shown, hidden) {
+      document.getElementById(shown).style.display='block';
+      document.getElementById(hidden).style.display='none';
+      return false;
+      }
+   </script>
+</html>

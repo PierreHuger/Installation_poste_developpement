@@ -1,0 +1,18 @@
+Tâches et répartition des tâches:
+
+Mattéo Gaillard: 
+	- Création du script bash pour le traitement et la convertion des images des avatars. 
+	- Création du fichier de documentation LISEZMOI_2.txt
+	- Création du script final permettant de générer automatiquement les PDF de chaques régions. Il sera fait en reunissant toutes les étapes.
+	
+Maxime Dardenne:
+	- Création du script de génération du QRCode. Le script tourne dans le containeur
+	- Création du fichier LISEZMOI_3.txt
+	
+Pierre Huger:
+	- Génération du PDF à partir des scripts précédents
+	- Création du fichier LISEZMOI_5.txt
+
+Timéo tribotté et Kilian Hodouin:
+	- Transformation du modèle HTML en script PHP à partir des fichiers dat de la région
+	- Création du fichier LISEZMOI_4.txt

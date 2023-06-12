@@ -1,0 +1,55 @@
+IMPORTANT:
+Pour lancer le script il faut avoir le fichier de la région dans le même dossier que le script PHP.
+
+Voici les étapes à suivre pour le lancer sans problème:
+- télécharger le script "script_fichiers.php".
+- avoir le fichier d'une région.
+
+À partir d'ici il y a deux possibilités:
+
+Première possibilité: copier les fichiers dans le container et récupérer le résultat manuellement
+- Télécharger l'image docker de php de la SAE 1.03
+	- soit en étant sur le réseau local via la commande: 
+		docker pull sae103-php
+	- soit via l'URL externe:
+		docker pull bigpapoo/sae103-php
+- Lancer le container via la commande:
+	- docker run -it (bigpapoo/)sae103-php /bin/bash
+- Une fois dans le container, ouvrez un autre terminal dans le dossier contenant le script php et le ou les fichiers txt des régions:
+	- puis faites
+		docker cp . <container_id>:/work
+	Remarques:
+	 	- cette commande permet de copier l'entièreté du dossier dans le container. (Vous pouvez copier fichier par fichier si vous voulez)...
+		- pour récupérer l'id de votre container faites docker ps
+	
+- Revenez sur le terminal où vous êtes dans le container et lancez le script php:
+	- Soit en faisant: 
+		chmod +x ./script_fichiers.php (cette commande est à faire une seule fois)
+		./script_fichiers.php NomDeLaRegion.txt
+	- Soit en faisant: 
+		php -f ./script_fichiers.php NomDeLaRegion.txt
+- Ce script va créer dans le dossier 3 fichiers comm.dat, tableau.dat et texte.dat, il faut ensuite les transférer sur l'hôte, pour cela faites:
+	docker cp <container_id>:/work/comm.dat .
+	docker cp <container_id>:/work/tableau.dat .
+	docker cp <container_id>:/work/texte.dat .
+: Ces commandes vont copier les fichiers dans le répertoire où vous exécuter cette commande.
+
+Deuxième possibilité: utiliser les volumes docker
+- Créer un dossier qui servira de volume par exemple /Docker/Volume
+- Ensuite, mettez le script php ainsi que les régions dans ce dossier
+- Puis, lancer le container en utilisant le volume avec la commande suivante:
+	docker run -ti (bigpapoo/)sae103-php /bin/bash -v /Docker/Volume:/work
+Une fois lancé, lancez le script php:
+	- Soit en faisant: 
+		chmod +x ./script_fichiers.php (cette commande est à faire une seule fois)
+		./script_fichiers.php NomDeLaRegion.txt
+	- Soit en faisant: 
+		php -f ./script_fichiers.php NomDeLaRegion.txt
+- Une fois le script fini et le message comme quoi il n'y a pas d'erreur, vous pouvez vous rendre dans le dossier du volume dans vos fichiers où vous verrez des fichiers: tableau.dat, comm.dat, texte.dat qui sont les fichiers créé par le script grâce à votre région.
+
+
+Remarques:
+	- le script ne créé pas de dossier avec les fichiers créés dedans.
+	- le script renvoie une erreur si vous oubliez un paramètre.
+	- Vous ne pouvez pas créer le fichier .dat plusieurs régions en même temps.
+	- Les données présentes dans le fichier son du json, ce qui sera pour les futurs étapes, plus simple à décoder.

@@ -1,0 +1,4 @@
+Tâches réalisées:
+
+- Timéo Tribotté, Kilian Hodouin: Création du fichier regions.conf et du document HTML
+- Pierre Huger, Maxime Dardenne, Mattéo Gaillard: Création du fichier comm.dat grâce à un script PHP et fusion des scripts PHP pour n'en faire qu'un seul et même script.
